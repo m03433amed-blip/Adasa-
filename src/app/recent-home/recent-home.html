@@ -1,0 +1,87 @@
+<section class="bg-black">
+  <div class="container">
+    <div class="header d-flex justify-content-between align-items-end mb-5">
+      <div>
+        <span class="font-14 color-f97316 py-2 px-3 ps-4 mb-3 d-inline-block border-08 rounded-pill"
+          >الأحدث</span
+        >
+        <h2 class="font-60 fw-bold text-white mb-0">أحدث المقالات</h2>
+        <p class="font-18 color-a1a1a1 mt-3">محتوى جديد طازج من المطبعة</p>
+      </div>
+      <div>
+        <a routerLink="/blog" class="text-decoration-none color-f97316">
+          عرض جميع المقالات <i class="fa-solid fa-arrow-left me-2"></i>
+        </a>
+      </div>
+    </div>
+    <div class="body row column-gap-3">
+      <div class="row g-3">
+        @for (post of post.posts.slice(3, 6); track post.id) {
+          <article class="col-12 col-md-6 col-lg-4">
+            <div class="bg-161616 rounded-4 overflow-hidden recent-article h-100">
+              <a href="" class="text-decoration-none d-block h-100">
+                <!-- article headers  -->
+                <div class="article-head overflow-hidden w-100 position-relative">
+                  <!-- article background image  -->
+                  <img
+                    [src]="post.image"
+                    [alt]="post.title"
+                    class="w-100 object-fit-cover rounded-top-4"
+                    style="height: 200px"
+                  />
+                  <!-- category of image  -->
+                  <div class="position-absolute img-span">
+                    <span class="text-white font-12 fw-semibold py-2 px-3 bg-black rounded-pill">
+                      {{ post.category }}
+                    </span>
+                  </div>
+                </div>
+
+                <!-- article body  -->
+                <div class="article-body p-4">
+                  <!-- body header  -->
+                  <div class="d-flex column-gap-4 align-items-center mb-12">
+                    <span class="font-14 color-737373">
+                      <i class="fa-regular fa-clock ms-2"></i>{{ post.readTime }}
+                    </span>
+                    <span class="font-14 color-737373">{{ getArabicMonth(post.date) }}</span>
+                  </div>
+
+                  <!-- main paragraph in article  -->
+                  <h3 class="font20 mb-12 fw-bold text-white">{{ post.title }}</h3>
+
+                  <!-- description of article  -->
+                  <p class="font-14 color-a1a1a1 mb-20">
+                    {{ post.excerpt }}
+                  </p>
+
+                  <!-- footer  -->
+                  <div class="d-flex justify-content-between align-items-center pt-3 bt-08">
+                    <div class="d-flex align-items-center column-gap-3">
+                      <img
+                        [src]="post.author.avatar"
+                        [alt]="post.author.name"
+                        class="rounded-circle img-recent"
+                      />
+                      <div>
+                        <p class="mb-0 font-14 fw-medium text-white">{{ post.author.name }}</p>
+                        <p class="mb-0 font-12 fw-normal color-737373">{{ post.author.role }}</p>
+                      </div>
+                    </div>
+
+                    <!-- left angle  -->
+                    <div
+                      class="d-flex justify-content-center align-items-center color-F46401 rounded-circle left-angle-span"
+                    >
+                      <i class="fa-solid fa-angle-left"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>

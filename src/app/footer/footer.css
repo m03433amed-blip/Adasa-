@@ -1,0 +1,116 @@
+/* footer direction  */
+footer {
+  direction: rtl;
+}
+footer::selection {
+  background-color: #f77015;
+  color: #fff;
+}
+/* width & height  */
+.width-40 {
+  width: 40px;
+}
+.width-45 {
+  width: 45px;
+}
+.w-32-h-2 {
+  width: 32px;
+  height: 2px;
+}
+.height-40 {
+  height: 40px;
+}
+.height-45 {
+  height: 45px;
+}
+/* fonts  */
+.font-20 {
+  font-size: 20px;
+  line-height: 28px;
+}
+.font-14 {
+  font-size: 14px;
+  line-height: 23px;
+}
+.font-16 {
+  font-size: 16px;
+  line-height: 24px;
+}
+/* colors & background colors  */
+.color-fb5600 {
+  background-color: #fb5600;
+}
+.bg-color-fb5600 {
+  color: #fb5600;
+}
+.color-737373 {
+  color: #737373;
+}
+.bg-161616 {
+  background-color: #161616;
+}
+.color-4c4c50 {
+  color: #4c4c50;
+}
+.color-525252 {
+  color: #525252;
+}
+/* padding & border & margin   */
+.p-64y-34x {
+  padding: 64px 38px;
+}
+.bt-08 {
+  border-top: 0.8px solid #262626;
+}
+.b-08 {
+  border: 0.8px solid #262626;
+}
+.px-32 {
+  padding: 0 32px;
+}
+/* end  */
+.dash-span {
+  background-image: linear-gradient(to left, #f1ae00 10%, #ff6a00);
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.list-transation {
+  transform: translateX(21px);
+  transition: all 0.3s;
+}
+.list-transation:hover {
+  transform: translateX(-1px);
+  color: #ec5c0d;
+}
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem #ff6a00;
+}
+/* hovers  */
+.footer-btn {
+  background-image: linear-gradient(to left, #ec5c0d, #f77015);
+  transition: all 0.3s;
+}
+.footer-btn:hover {
+  transform: translateY(-3px);
+}
+.footer-ico div {
+  transition: all 0.3s;
+}
+.footer-ico:hover div {
+  transform: scale(1.07);
+}
+.list-footer-ico {
+  transition: all 0.3s;
+}
+.list-footer-ico:hover {
+  background-color: #ec5c0d;
+  color: white;
+  transform: scale(1.1);
+}
+.privacy {
+  transition: all 0.3s;
+}
+.privacy:hover {
+  color: #fb5600;
+}

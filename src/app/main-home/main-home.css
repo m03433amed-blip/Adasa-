@@ -1,0 +1,137 @@
+/* lines throw  */
+section {
+  background-color: #000;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  direction: rtl;
+}
+section::selection {
+  background-color: #f98e1b;
+  color: #fff;
+}
+/* fonts  */
+.font-14 {
+  font-size: 14px;
+  line-height: 20px;
+}
+.font-16 {
+  font-size: 16px;
+  line-height: 24px;
+}
+.font-24-li-30 {
+  font-size: 24px;
+  line-height: 30px;
+}
+.font-24 {
+  font-size: 24px;
+  line-height: 39px;
+}
+.font-30 {
+  font-size: 30px;
+  line-height: 36px;
+}
+.font-72 {
+  font-size: 72px;
+  line-height: 90px;
+}
+/* font weight  */
+.fw-extrem {
+  font-weight: 900;
+}
+/* padding , margin , border  */
+.py-80 {
+  padding: 80px 32px;
+}
+.mb-32 {
+  margin-bottom: 32px;
+}
+.mb-64 {
+  margin-bottom: 64px;
+}
+.px-32 {
+  padding: 0 32px;
+}
+.border-08 {
+  border: 0.8px solid #64320e;
+}
+.b-08-262626 {
+  border: 0.8px solid #262626;
+}
+
+/* colors and background  */
+.bg-f97316 {
+  background-color: #f985351b;
+}
+.color-a1a1a1 {
+  color: #a1a1a1;
+}
+.bg-ec5c0e {
+  background-color: #ec5c0e;
+}
+
+.bg-161514 {
+  background-color: #161514;
+}
+.color-ff6900 {
+  color: #ff6900;
+}
+.color-FA9E1E {
+  color: #fa9e1e;
+}
+.color-737373 {
+  color: #737373;
+}
+.bg-linear-F98E1B {
+  background: linear-gradient(to right, #fbad21, #f98e1b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* another classes  */
+.main-head::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 20px;
+  top: 6px;
+  left: 120px;
+  background-color: #ff6900;
+  animation: scales 2s infinite ease;
+}
+/* hovers  */
+.discovery-btn,
+.know-more-btn,
+.discovery-btn i {
+  transition: all 0.3s;
+  color: white;
+}
+.discovery-btn:hover i {
+  transform: translateX(-5px);
+}
+.discovery-btn:hover {
+  transform: translateY(-10px);
+}
+.know-more-btn:hover {
+  border: 0.8px solid #ec5c0e;
+  color: #ec5c0e;
+  background-color: #ff69003b;
+}
+.main-cat {
+  transition: all 0.3s;
+}
+.main-cat:hover {
+  transform: scale(1.05);
+}
+/* animation  */
+@keyframes scales {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}

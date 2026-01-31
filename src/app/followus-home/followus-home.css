@@ -1,0 +1,103 @@
+/* section  */
+section {
+  direction: rtl;
+}
+section::selection {
+  background-color: #f97b17;
+  color: #fff;
+}
+/* padding & margin  */
+.py-96 {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+.p-64 {
+  padding: 64px;
+}
+.px-32 {
+  padding-right: 32px;
+  padding-left: 32px;
+}
+.mb-32 {
+  margin-bottom: 32px;
+}
+.b-16 {
+  border: 1.6px solid #161616;
+}
+/* fonts  */
+.font-32 {
+  font-size: 32px;
+  line-height: 32px;
+}
+.font-36 {
+  font-size: 36px;
+  line-height: 40px;
+}
+.font-18 {
+  font-size: 18px;
+  line-height: 28px;
+}
+.font-14 {
+  font-size: 14px;
+  line-height: 20px;
+}
+/* colors & backgrounds  */
+.color-a1a1a1 {
+  color: #a1a1a1;
+}
+.bg-161616 {
+  background-color: #161616;
+}
+.color-737373 {
+  color: #737373;
+}
+/* more classes  */
+input {
+  background-color: #0a0a0a;
+  color: #656969;
+  border: 0.8px solid #262626;
+}
+.btn-form {
+  background-image: linear-gradient(to left, #f54b00, #ff6800);
+  color: #fff;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  border: 0.8px solid #f54b00;
+  transition: all 0.3s;
+}
+.btn-form:hover {
+  filter: brightness(0.8) saturate(1.2);
+}
+
+.w-30h-30 {
+  width: 35px;
+  height: 35px;
+}
+.follow-us-ico-container {
+  width: 65px;
+  height: 65px;
+  background-color: #f85100;
+}
+
+.linear-background-span {
+  background-image: linear-gradient(to left, #fab722, #faa21e, #f97b17);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.middle-image {
+  top: 0px;
+  left: 5px;
+}
+.style-div {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 600px;
+  height: 300px;
+  background-color: #ff6800;
+  transform: translateX(-50%);
+  filter: blur(10000000px);
+  z-index: 0;
+}

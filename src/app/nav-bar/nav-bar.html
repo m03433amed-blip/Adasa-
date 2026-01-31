@@ -1,0 +1,61 @@
+<nav class="bg-161616 p-12px px-0 position-fixed top-0 start-0 end-0 z-3">
+  <div class="container p-0">
+    <div class="row justify-content-between align-items-center">
+      <!-- icon & name of project -->
+      <a
+        routerLink="/home"
+        class="col-auto text-decoration-none text-black d-flex column-gap-3 align-items-center"
+      >
+        <!-- icon of project  -->
+        <div class="w-50px h-50px">
+          <img src="images/logo-GdqARQRt.png" alt="project icon" class="w-100 container-ico" />
+        </div>
+        <!-- description of nav bar  -->
+        <div class="row">
+          <span class="col-md-12 text-white font-20 p-0">عدسة</span>
+          <span class="col-md-12 color-ff8904cc fw-normal p-0">عالم تصوير الفوتوغرافي</span>
+        </div>
+      </a>
+      <!-- links of different pages  -->
+      <div class="col-auto p-6px border-08 rounded-pill">
+        <div class="d-flex column-gap-3 align-items-center rounded-pill">
+          <!-- home page  -->
+          <a
+            routerLinkActive="active"
+            routerLink="/home"
+            class="text-decoration-none color-a1a1a1 p-20x-10y rounded-pill font-20-14 fw-medium nav-link"
+            >الرئيسية</a
+          >
+          <!-- blog page  -->
+          <a
+            routerLinkActive="active"
+            routerLink="/blog"
+            class="text-decoration-none color-a1a1a1 p-20x-10y rounded-pill font-20-14 fw-medium nav-link"
+            >المدونة</a
+          >
+          <!-- about page  -->
+          <a
+            routerLinkActive="active"
+            routerLink="/contact"
+            class="text-decoration-none color-a1a1a1 p-20x-10y rounded-pill font-20-14 fw-medium nav-link"
+            >من نحن</a
+          >
+        </div>
+      </div>
+      <!-- start reading  -->
+      <div class="col-auto button-read d-flex column-gap-2">
+        <!-- start reading  -->
+        <a
+          routerLink="/home"
+          class="text-decoration-none btn-start p-32px py-3 bg-danger rounded-pill font-20-14 fw-semibold text-white"
+        >
+          ابدأ القراءة</a
+        >
+        <!-- search icon  -->
+        <button class="bg-transparent border-btn-0 p-12px rounded-3 search-ico">
+          <i class="fa-solid fa-magnifying-glass color-737373"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

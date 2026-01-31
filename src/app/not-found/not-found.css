@@ -1,0 +1,136 @@
+/* lines throw  */
+section {
+  background-color: #000;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+section::selection {
+  background-color: #f76f14;
+  color: #fff;
+}
+/* fonts min --> max  */
+.font-14 {
+  font-size: 14px;
+  line-height: 20px;
+}
+.font-16 {
+  font-size: 16px;
+  line-height: 24px;
+}
+.font-18 {
+  font-size: 18px;
+  line-height: 28px;
+}
+.font-30 {
+  font-size: 30px;
+  line-height: 36px;
+}
+.font-50 {
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: 900;
+}
+
+.font-180 {
+  font-size: 180px;
+  line-height: 180px;
+  font-weight: 900;
+}
+/* colors & backgrounds */
+.color-a1a1a1 {
+  color: #a1a1a1;
+}
+.bg-ff6900 {
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 138, 0, 0.2) 0%,
+    rgba(255, 138, 0, 0.2) 40%,
+    rgba(255, 138, 0, 0.2) 65%,
+    rgba(255, 138, 0, 1) 100%
+  );
+}
+.color-FF6900 {
+  color: #ff6900;
+}
+.bg-linear-EC5C0D {
+  background-image: linear-gradient(to right, #ec5c0d, #f76f14);
+}
+.not-found-header {
+  background: linear-gradient(to left, #fe8600, #f5a400, #fd8a00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.color-737373 {
+  color: #737373;
+}
+/* width & height  */
+.width-120 {
+  width: 120px;
+}
+.height-120 {
+  height: 120px;
+}
+/* padding & margin & border  */
+.border-08 {
+  border: 0.8px solid #323131;
+}
+.px-32py-16 {
+  padding: 16px 32px;
+}
+
+.mb-32 {
+  margin-bottom: 32px;
+}
+.pt-32 {
+  padding-top: 32px;
+}
+/* some main classes  */
+.package-anchor {
+  text-decoration: none;
+  color: #ff8904;
+  transition: all 0.3s;
+}
+.package-anchor:hover {
+  text-decoration: underline;
+}
+
+.main-not-found-btn,
+.blog-not-found-btn {
+  transition: all 0.3s;
+  color: #fff;
+}
+.main-not-found-btn:hover {
+  transform: translateY(-5px);
+}
+.blog-not-found-btn:hover {
+  border: 0.8px solid #f76f14;
+  color: #f76f14;
+  background-color: #ff89044f;
+}
+.face-container::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+  top: 0px;
+  left: 140px;
+  background-color: #ec5c0d;
+  position: absolute;
+  transform: rotate(15deg);
+  animation: jumbs 1.5s infinite;
+}
+/* animation  */
+@keyframes jumbs {
+  0%,
+  100% {
+    transform: translateY(0) rotate(15deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(15deg);
+  }
+}

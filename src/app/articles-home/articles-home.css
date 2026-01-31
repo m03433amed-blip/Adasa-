@@ -1,0 +1,139 @@
+/* sections  */
+section {
+  direction: rtl;
+}
+section::selection {
+  background-color: #f97200;
+  color: #fff;
+}
+/* fonts  */
+.font-60 {
+  font-size: 60px;
+  line-height: 75px;
+}
+.fs-xs {
+  font-size: 10px;
+}
+.font-12 {
+  font-size: 12px;
+  line-height: 16px;
+}
+.font-18 {
+  font-size: 18px;
+  line-height: 29px;
+}
+.font-16 {
+  font-size: 16px;
+  line-height: 24px;
+}
+.font-14 {
+  font-size: 14px;
+  line-height: 20px;
+}
+.font-30 {
+  font-size: 30px;
+  line-height: 36px;
+}
+/* padding & margin & border  */
+.py-96 {
+  padding: 96px 0;
+}
+.px-25px {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+.mb-32 {
+  margin-bottom: 32px;
+}
+.mt-64 {
+  margin-top: 64px;
+}
+.px-6py-12 {
+  padding: 6px 12px;
+}
+.border-08 {
+  border: 0.8px solid #262626;
+}
+/* colors & backgrounds  */
+.color-a1a1a1 {
+  color: #a1a1a1;
+}
+.color-f97316 {
+  color: #f97316;
+}
+.bg-color-f97316 {
+  background-color: #f9731630;
+  border: 0.8px solid #f97316;
+}
+.bg-F54A00 {
+  background-image: linear-gradient(to left, #f54a00, #ff6600);
+}
+.bg-linear-F1AF00 {
+  background-image: linear-gradient(to left, #f1af00, #ff6f00);
+}
+.color-f97200 {
+  color: #f97200;
+}
+.color-737373 {
+  color: #737373;
+}
+.bg-161616 {
+  background-color: #161616;
+}
+/* more classes  */
+.span-head::after {
+  content: '';
+  background-color: #f97316;
+  width: 8px;
+  height: 8px;
+  border-radius: 25px;
+  position: absolute;
+  top: 47%;
+  left: 77%;
+  animation: scales 2s infinite;
+}
+/* animation  */
+@keyframes scales {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+/* hovers  */
+.read-more-main i {
+  transition: all 0.3s;
+}
+.read-more-main:hover i {
+  transform: translateX(-4px);
+}
+.span-img-home {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+}
+.article-link .article-image img,
+.article-link .article-header {
+  transition: all 0.3s;
+  color: #fff;
+}
+.article-border {
+  transition: all 0.3s;
+}
+.article-link .span-article {
+  transition: all 0.3s;
+}
+.article-link:hover div .article-image img {
+  transform: scale(1.05);
+}
+.article-link:hover .article-header {
+  color: #f54a00;
+}
+.article-border:hover {
+  border: 0.8px solid #f54a00;
+}
+.article-link:hover .span-article {
+  transform: translateX(5px);
+}

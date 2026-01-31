@@ -1,0 +1,95 @@
+/* directions  */
+nav {
+  direction: rtl;
+}
+.button-read {
+  direction: ltr;
+}
+nav::selection {
+  background-color: #f97200;
+  color: #fff;
+}
+/* fonts min --> max */
+.font-20-14 {
+  font-size: 14px;
+  line-height: 20px;
+}
+.font-20 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+}
+/* border */
+.border-btn-0 {
+  border: 0;
+}
+.border-08 {
+  border: 0.8px solid #252525;
+}
+/* padding min --> max */
+.p-6px {
+  padding: 6px;
+}
+.p-12px {
+  padding: 12px;
+}
+.p-20x-10y {
+  padding: 10px 20px;
+}
+.p-32px {
+  padding: 0 32px;
+}
+/* colors and background  */
+.color-ff8904cc {
+  color: #ff8904cc;
+}
+.color-737373 {
+  color: #737373;
+}
+.color-a1a1a1 {
+  color: #a1a1a1;
+}
+.bg-161616 {
+  background-color: #161616;
+}
+/* width & height  */
+.w-50px {
+  width: 50px;
+}
+.h-50px {
+  height: 50px;
+}
+/* hovers  */
+.nav-link {
+  transition: all 0.1s;
+}
+.nav-link:hover {
+  color: #fff;
+}
+.container-ico {
+  transition: all 0.2s;
+}
+.container-ico:hover {
+  transform: scale(1.05);
+}
+.search-ico,
+.search-ico i {
+  transition: all 0.3s ease;
+}
+.search-ico:hover {
+  border: 0.8px solid #252525;
+}
+.search-ico:hover i {
+  color: #f97200;
+}
+.btn-start {
+  transition: all 0.3s;
+}
+.btn-start:hover {
+  transform: translateY(-3px);
+}
+/* Active Class  */
+.active {
+  background-image: linear-gradient(to left, #f64b00, #fc5800, #ff6600);
+  color: #fff;
+}

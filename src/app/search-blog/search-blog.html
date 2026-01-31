@@ -1,0 +1,307 @@
+<div class="b-bottom-08 bg-black parent-search">
+  <div class="px-32 container py-3 d-flex justify-content-between align-items-center">
+    <div class="w-250 align-items-center position-relative">
+      <input
+        type="text"
+        placeholder="أبحث في المقالات... "
+        class="rounded-2 px-5 py-3 d-inline-block w-100"
+      />
+      <i class="fa-solid fa-magnifying-glass position-absolute"></i>
+    </div>
+    <div class="d-flex align-items-center column-gap-2">
+      <button
+        class="py-2 px-3 rounded-4 btn-head-blog"
+        [class.active]="selectedCategory === 'all'"
+        (click)="postLength('all')"
+      >
+        جميع المقالات
+      </button>
+
+      @for (cat of category.categories; track $index) {
+        <button
+          class="py-2 px-3 rounded-4 btn-head-blog"
+          [class.active]="selectedCategory === cat.name"
+          [attr.data-category]="cat.name"
+          (click)="postLength(cat.name)"
+        >
+          {{ cat.name }}
+        </button>
+      }
+    </div>
+  </div>
+</div>
+<section class="bg-black">
+  <div class="container py-5">
+    <div class="search-header d-flex justify-content-between mb-32">
+      <p class="colors-a1a1a1">
+        عرض <span class="text-white">{{ postLength(selectedCategory) }}</span> مقالات من
+        <span class="text-white"> {{ getCategoryName() }}</span>
+      </p>
+      <div class="d-flex gap-2 bg-161616 rounded-3 p-2 b-08">
+        <button
+          title="Grid"
+          (click)="handleClick('Grid')"
+          [class]="
+            isGridActive == true
+              ? 'w-40 h-40 active d-flex justify-content-center align-items-center rounded-2 btn-icon position-relative'
+              : 'w-40 h-40  d-flex justify-content-center align-items-center rounded-2 btn-icon position-relative'
+          "
+        >
+          <i class="fa-solid fa-border-all p-2 search-ico-search"></i>
+        </button>
+        <button
+          title="List"
+          (click)="handleClick('List')"
+          [class]="
+            isListActive == true
+              ? 'w-40 active h-40 d-flex justify-content-center align-items-center rounded-2 btn-icon position-relative'
+              : 'w-40 h-40 d-flex justify-content-center align-items-center rounded-2 btn-icon position-relative'
+          "
+        >
+          <i class="fa-solid fa-bars p-2 search-ico-search"></i>
+        </button>
+      </div>
+    </div>
+    <div class="search-body text-center">
+      @if (isGridActive == true) {
+        <!-- Grid View -->
+        <div class="row g-3">
+          @if (postLength(selectedCategory) > 6 && selectedCategory === 'all') {
+            @for (post of posts.posts.slice(0, 6); track post.id) {
+              <article class="col-12 col-md-6 col-lg-4">
+                <div class="bg-161616 rounded-4 overflow-hidden recent-article h-100">
+                  <a href="" class="text-decoration-none d-block h-100">
+                    <!-- article headers -->
+                    <div class="article-head overflow-hidden w-100 position-relative">
+                      <img
+                        [src]="post.image"
+                        [alt]="post.title"
+                        class="w-100 object-fit-cover rounded-top-4"
+                        style="height: 200px"
+                      />
+                      <div class="position-absolute img-span">
+                        <span
+                          class="text-white font-12 fw-semibold py-2 px-3 bg-black rounded-pill"
+                        >
+                          {{ post.category }}
+                        </span>
+                      </div>
+                    </div>
+
+                    <!-- article body -->
+                    <div class="article-body p-4 text-end">
+                      <div class="d-flex column-gap-4 align-items-center mb-12">
+                        <span class="font-14 color-737373">
+                          <i class="fa-regular fa-clock ms-2"></i>{{ post.readTime }}
+                        </span>
+                        <span class="font-14 color-737373">{{ getArabicMonth(post.date) }}</span>
+                      </div>
+
+                      <h3 class="font20 mb-12 fw-bold text-white">{{ post.title }}</h3>
+                      <p class="font-14 color-a1a1a1 mb-20">{{ post.excerpt }}</p>
+
+                      <!-- footer -->
+                      <div class="d-flex justify-content-between align-items-center pt-3 bt-08">
+                        <div class="d-flex align-items-center column-gap-3">
+                          <img
+                            [src]="post.author.avatar"
+                            [alt]="post.author.name"
+                            class="rounded-circle img-recent"
+                          />
+                          <div>
+                            <p class="mb-0 font-14 fw-medium text-white">{{ post.author.name }}</p>
+                            <p class="mb-0 font-12 fw-normal color-737373">
+                              {{ post.author.role }}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div
+                          class="d-flex justify-content-center align-items-center color-F46401 rounded-circle left-angle-span"
+                        >
+                          <i class="fa-solid fa-angle-left"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </article>
+            }
+          } @else if (postLength(selectedCategory) > 0) {
+            @for (post of getFilter().slice(0, 6); track post.id) {
+              <article class="col-12 col-md-6 col-lg-4 overflow-hidden">
+                <div class="bg-161616 rounded-4 overflow-hidden recent-article h-100">
+                  <a href="" class="text-decoration-none d-block h-100">
+                    <!-- article headers -->
+                    <div class="article-head overflow-hidden w-100 position-relative">
+                      <img
+                        [src]="post.image"
+                        [alt]="post.title"
+                        class="w-100 object-fit-cover rounded-top-4"
+                        style="height: 200px"
+                      />
+                      <div class="position-absolute img-span">
+                        <span
+                          class="text-white font-12 fw-semibold py-2 px-3 bg-black rounded-pill"
+                        >
+                          {{ post.category }}
+                        </span>
+                      </div>
+                    </div>
+
+                    <!-- article body -->
+                    <div class="article-body p-4 text-end">
+                      <div class="d-flex column-gap-4 align-items-center mb-12">
+                        <span class="font-14 color-737373">
+                          <i class="fa-regular fa-clock ms-2"></i>{{ post.readTime }}
+                        </span>
+                        <span class="font-14 color-737373">{{ getArabicMonth(post.date) }}</span>
+                      </div>
+
+                      <h3 class="font20 mb-12 fw-bold text-white">{{ post.title }}</h3>
+                      <p class="font-14 color-a1a1a1 mb-20">{{ post.excerpt }}</p>
+
+                      <!-- footer -->
+                      <div class="d-flex justify-content-between align-items-center pt-3 bt-08">
+                        <div class="d-flex align-items-center column-gap-3">
+                          <img
+                            [src]="post.author.avatar"
+                            [alt]="post.author.name"
+                            class="rounded-circle img-recent"
+                          />
+                          <div>
+                            <p class="mb-0 font-14 fw-medium text-white">{{ post.author.name }}</p>
+                            <p class="mb-0 font-12 fw-normal color-737373">
+                              {{ post.author.role }}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div
+                          class="d-flex justify-content-center align-items-center color-F46401 rounded-circle left-angle-span"
+                        >
+                          <i class="fa-solid fa-angle-left"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </article>
+            }
+          }
+        </div>
+      } @else {
+        <!-- List View -->
+        @if (postLength(selectedCategory) > 6 && selectedCategory === 'all') {
+          @for (post of posts.posts.slice(0, 6); track post.id) {
+            <article class="mb-4 text-end rounded-4 bg-161616">
+              <a href="" class="text-decoration-none row">
+                <div class="list-article-a-head col-md-3">
+                  <img
+                    [src]="post.image"
+                    [alt]="post.title"
+                    class="w-100 h-100 object-fit-cover rounded-end-4"
+                  />
+                </div>
+                <div class="list-article-a-body p-4 col-9">
+                  <div class="d-flex column-gap-2 align-items-center mb-12">
+                    <span
+                      class="font-12 fw-semibold color-f97200 bg-gradien py-1 p-12 border-08 rounded-pill"
+                    >
+                      {{ post.category }}
+                    </span>
+                    <span class="font-14 color-737373">
+                      <i class="fa-regular fa-clock"></i> {{ post.readTime }}
+                    </span>
+                    <span class="font-14 color-737373">{{ getArabicMonth(post.date) }}</span>
+                  </div>
+                  <h2 class="font-24 mb-12">{{ post.title }}</h2>
+                  <p class="font-16 color-a1a1a1 mb-3">{{ post.excerpt }}</p>
+                  <div class="d-flex justify-content-between align-items-end">
+                    <div class="d-flex align-items-center column-gap-3">
+                      <img
+                        [src]="post.author.avatar"
+                        [alt]="post.author.name"
+                        class="w-40 h-40 rounded-circle"
+                      />
+                      <div>
+                        <p class="mb-0 font-14 fw-semibold text-white">{{ post.author.name }}</p>
+                        <p class="mb-0 font-12 color-737373">{{ post.author.role }}</p>
+                      </div>
+                    </div>
+                    <span class="font-14 color-f97200">
+                      اقرأ المقال <i class="fa-solid fa-arrow-left me-2"></i>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+          }
+        } @else if (postLength(selectedCategory) > 0) {
+          @for (post of getFilter().slice(0, 6); track post.id) {
+            <article class="mb-4 text-end rounded-4 bg-161616">
+              <a href="" class="text-decoration-none row">
+                <div class="list-article-a-head col-md-3">
+                  <img
+                    [src]="post.image"
+                    [alt]="post.title"
+                    class="w-100 h-100 object-fit-cover rounded-end-4"
+                  />
+                </div>
+                <div class="list-article-a-body p-4 col-9">
+                  <div class="d-flex column-gap-2 align-items-center mb-12">
+                    <span
+                      class="font-12 fw-semibold color-f97200 bg-gradien py-1 p-12 border-08 rounded-pill"
+                    >
+                      {{ post.category }}
+                    </span>
+                    <span class="font-14 color-737373">
+                      <i class="fa-regular fa-clock"></i> {{ post.readTime }}
+                    </span>
+                    <span class="font-14 color-737373">{{ getArabicMonth(post.date) }}</span>
+                  </div>
+                  <h2 class="font-24 text-white mb-12">{{ post.title }}</h2>
+                  <p class="font-16 color-a1a1a1 mb-3">{{ post.excerpt }}</p>
+                  <div class="d-flex justify-content-between align-items-end">
+                    <div class="d-flex align-items-center column-gap-3">
+                      <img
+                        [src]="post.author.avatar"
+                        [alt]="post.author.name"
+                        class="w-40 h-40 rounded-circle"
+                      />
+                      <div>
+                        <p class="mb-0 font-14 fw-semibold text-white">{{ post.author.name }}</p>
+                        <p class="mb-0 font-12 color-737373">{{ post.author.role }}</p>
+                      </div>
+                    </div>
+                    <span class="font-14 color-f97200">
+                      اقرأ المقال <i class="fa-solid fa-arrow-left me-2"></i>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+          }
+        }
+      }
+
+      <!-- Pagination -->
+      <div class="d-flex align-items-center justify-content-center mt-5 column-gap-2">
+        <button class="p-12 rounded-4 bg-161616 text-white btn-right-left">
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+        <div class="d-flex justify-content-center align-items-center column-gap-1">
+          <button class="w-40 h-40 rounded-3 colors-a1a1a1 bg-161616 border-0">1</button>
+          <button class="w-40 h-40 rounded-3 colors-a1a1a1 bg-161616 border-0">2</button>
+          <button class="w-40 h-40 rounded-3 colors-a1a1a1 bg-161616 border-0">3</button>
+          <button class="w-40 h-40 rounded-3 colors-a1a1a1 bg-161616 border-0">4</button>
+          <button class="w-40 h-40 rounded-3 colors-a1a1a1 bg-161616 border-0">5</button>
+        </div>
+        <button class="p-12 rounded-4 bg-161616 text-white btn-right-left">
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+      </div>
+      <p class="color-737373 font-14 mb-0 mt-3">صفحة 1 من 5</p>
+    </div>
+  </div>
+</section>

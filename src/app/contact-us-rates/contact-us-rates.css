@@ -1,0 +1,82 @@
+/* section */
+section {
+  direction: rtl;
+}
+section::selection {
+  background-color: #f97200;
+  color: #fff;
+}
+/* colors  */
+.bg-111111 {
+  background-color: #111111;
+}
+.color-a1a1a1 {
+  color: #a1a1a1;
+}
+.color-f97200 {
+  color: #f97200;
+}
+.color-a1a1a1 {
+  color: #a1a1a1;
+}
+.bg-161616 {
+  background-color: #161616;
+}
+/* fonts  */
+.font-36 {
+  font-size: 36px;
+  line-height: 40px;
+}
+.font-18 {
+  font-size: 18px;
+  line-height: 28px;
+}
+.font-14 {
+  font-size: 14px;
+  line-height: 20px;
+}
+/* padding & margin  */
+.py-80 {
+  padding: 80px 0;
+}
+.mb-64 {
+  margin-bottom: 64px;
+}
+.b-08 {
+  border: 0.8px solid #262626;
+}
+/* more classes  */
+h2::before {
+  content: '';
+  height: 32px;
+  width: 6px;
+  border-radius: 20px;
+  position: absolute;
+  top: 7px;
+  left: -20px;
+  background-image: linear-gradient(to bottom, #f2ab00, #ff6f00);
+}
+h2::after {
+  content: '';
+  height: 32px;
+  width: 6px;
+  border-radius: 20px;
+  position: absolute;
+  top: 7px;
+  right: -20px;
+  background-image: linear-gradient(to bottom, #ff6f00, #f2ab00);
+}
+h3 {
+  color: #fff;
+}
+.rate-container,
+h3 {
+  transition: all 0.3s;
+}
+.rate-container:hover {
+  background-color: #f972002f;
+  border: 0.8px solid #f97200;
+}
+.rate-container:hover h3 {
+  color: #f97200;
+}

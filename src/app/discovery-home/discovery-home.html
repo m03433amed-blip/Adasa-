@@ -1,0 +1,43 @@
+<section class="">
+  <div class="container">
+    <!-- header  -->
+    <div class="header mb-5 text-center">
+      <span
+        class="font-14 fw-medium py-2 px-3 rounded-pill mb-3 pe-5 span-discovery-head position-relative"
+        >التصنيفات</span
+      >
+      <h2 class="font-60 fw-bold text-white">استكشف حسب الموضوع</h2>
+      <p class="font-18 color-a1a1a1 mt-3">اعثر على محتوى مصمم حسب اهتماماتك</p>
+    </div>
+    <!-- body  -->
+    <div class="body">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
+        @for (cat of category.categories; track $index) {
+          <div class="col">
+            <a
+              routerLink="/blog"
+              class="card-link text-decoration-none bg-161616 d-flex justify-content-between align-items-center rounded-4 p-4 b-08 h-100"
+            >
+              <div class="d-flex justify-content-between align-items-center w-100">
+                <div>
+                  <div
+                    class="w-50px h-50px d-flex justify-content-center align-items-center mb-3 bg-ico-discovery rounded-3"
+                  >
+                    <i [class]="getIcon(cat.color)"></i>
+                  </div>
+                  <h3 class="font-18 fw-bold text-white mb-2">{{ cat.name }}</h3>
+                  <p class="font-14 color-fffc mb-0">{{ cat.count }} مقالة</p>
+                </div>
+                <div
+                  class="w-30px h-30px d-flex rounded-circle bg-FE9D33 justify-content-center align-items-center hidden-ico"
+                >
+                  <i class="fa-solid fa-angle-left text-white"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,81 @@
+<section class="bg-black py-96">
+  <div class="container">
+    <!-- header articles main page  -->
+    <div class="header d-flex justify-content-between align-items-end mb-5">
+      <!-- right side header  -->
+      <div class="">
+        <span
+          class="px-25px mb-3 d-inline-block py-2 rounded-pill color-f97316 bg-color-f97316 span-head position-relative"
+          >مميز</span
+        >
+        <h2 class="font-60 fw-bold text-white mb-0">مقالات مختارة</h2>
+        <p class="color-a1a1a1 font-18 mt-3 mb-0">محتوى منتقى لبدء رحلة تعلمك</p>
+      </div>
+      <!-- anchor side ==> read more   -->
+      <a
+        routerLink="/blog"
+        class="text-decoration-none py-2 px-3 text-white font-16 fw-medium bg-F54A00 rounded-3 read-more-main"
+      >
+        عرض الكل <i class="fa-solid fa-angle-left me-2"></i>
+      </a>
+    </div>
+    <!-- body articles main page  -->
+    <div>
+      @for (post of data.posts.slice(0, 3); track post.id) {
+        <article class="mb-32 border-08 rounded-4 overflow-hidden article-border">
+          <a href="" class="text-decoration-none article-link">
+            <div class="row overflow-hidden">
+              <!-- right image  -->
+              <div class="col-6 position-relative px-0 article-image overflow-hidden">
+                <img
+                  [src]="post.image"
+                  [alt]="post.content"
+                  class="w-100 rounded-end-4 object-fit-cover h-100"
+                />
+              </div>
+              <!-- description  -->
+              <div class="col-6 p-5 rounded-start-4 bg-161616">
+                <div class="d-flex align-items-center column-gap-3 mb-3">
+                  <span
+                    class="d-flex py-2 px-3 font-12 fw-semibold color-f97200 bg-color-f97316 rounded-pill"
+                  >
+                    {{ post.category }}
+                  </span>
+                  <span class="d-flex color-737373 font-14">
+                    <i class="fa-regular fa-clock font-14 ms-2"></i>{{ post.readTime }}
+                  </span>
+                </div>
+                <h2 class="font-30 fw-bold mb-3 article-header">
+                  {{ post.title }}
+                </h2>
+                <p class="font-16 color-a1a1a1">
+                  {{ post.excerpt }}
+                </p>
+                <div class="mt-64 d-flex justify-content-between align-items-center">
+                  <div class="d-flex align-items-center column-gap-3">
+                    <!-- icon of author  -->
+                    <div class="w-25">
+                      <img
+                        [src]="post.author.avatar"
+                        [alt]="post.author.role"
+                        class="w-100 rounded-circle"
+                      />
+                    </div>
+                    <div>
+                      <p class="font-14 text-white mb-0 fw-semibold">
+                        {{ post.author.name }}
+                      </p>
+                      <p class="font-12 color-737373 mb-0">
+                        {{ getArabicMonth(post.date) }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+      }
+    </div>
+  </div>
+</section>
