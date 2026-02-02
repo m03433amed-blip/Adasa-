@@ -22,18 +22,21 @@
           <!-- twitter  -->
           <a
             href="https://x.com/?lang=ar"
+            target="_blank"
             class="width-40 d-flex color-737373 height-40 justify-content-center align-items-center text-decoration-none rounded-3 bg-161616 list-footer-ico"
             ><i class="fa-brands fa-x-twitter fs-5"></i
           ></a>
           <!-- github -->
           <a
             href="https://github.com/"
+            target="_blank"
             class="width-40 d-flex justify-content-center align-items-center color-737373 height-40 text-decoration-none rounded-3 bg-161616 list-footer-ico"
             ><i class="fa-brands fa-github fs-5"></i
           ></a>
           <!-- linkedin -->
           <a
             href="https://www.linkedin.com/feed/"
+            target="_blank"
             class="color-737373 d-flex align-items-center justify-content-center height-40 width-40 text-decoration-none rounded-3 bg-161616 list-footer-ico"
             ><i class="fa-brands fa-linkedin fs-5"></i
           ></a>
@@ -51,14 +54,22 @@
           <span class="w-32-h-2 dash-span bg-white rounded-pill"></span>استكشف
         </h3>
         <ul class="list-unstyled pe-2 overflow-hidden">
-          <li class="color-737373 mb-3 cursor-pointer list-transation font-14">
-            <i class="fa-solid fa-angle-left ms-2"></i>الرئيسية
+          <li class="mb-3 cursor-pointer list-transation">
+            <a routerLink="/home" class="color-737373 text-decoration-none list-transation font-14">
+              <i class="fa-solid fa-angle-left ms-2"></i> الرئيسية</a
+            >
           </li>
-          <li class="color-737373 mb-3 cursor-pointer list-transation font-14">
-            <i class="fa-solid fa-angle-left ms-2"></i>المدونة
+          <li class="mb-3 cursor-pointer list-transation">
+            <a routerLink="/blog" class="color-737373 text-decoration-none list-transation font-14"
+              ><i class="fa-solid fa-angle-left ms-2"></i> المدونة</a
+            >
           </li>
-          <li class="color-737373 mb-3 cursor-pointer list-transation font-14">
-            <i class="fa-solid fa-angle-left ms-2"></i>من نحن
+          <li class="cursor-pointer list-transation mb-3">
+            <a
+              routerLink="/contact"
+              class="color-737373 list-transation font-14 text-decoration-none"
+              ><i class="fa-solid fa-angle-left ms-2"></i> من نحن</a
+            >
           </li>
         </ul>
       </div>
@@ -68,17 +79,25 @@
           <span class="w-32-h-2 dash-span bg-white rounded-pill"></span>التصنيفات
         </h3>
         <ul class="list-unstyled pe-2 overflow-hidden">
-          <li class="color-737373 mb-3 cursor-pointer list-transation font-14">
-            <i class="fa-solid fa-angle-left ms-2"></i>إضاءة
+          <li class="mb-3 cursor-pointer list-transation">
+            <a routerLink="/blog" class="color-737373 text-decoration-none list-transation font-14"
+              ><i class="fa-solid fa-angle-left ms-2"></i> إضاءة</a
+            >
           </li>
-          <li class="color-737373 mb-3 cursor-pointer list-transation font-14">
-            <i class="fa-solid fa-angle-left ms-2"></i>بورترية
+          <li class="mb-3 cursor-pointer list-transation">
+            <a routerLink="/blog" class="color-737373 text-decoration-none list-transation font-14"
+              ><i class="fa-solid fa-angle-left ms-2"></i> بورترية</a
+            >
           </li>
-          <li class="color-737373 mb-3 cursor-pointer list-transation font-14">
-            <i class="fa-solid fa-angle-left ms-2"></i>مناظر طبيعية
+          <li class="mb-3 cursor-pointer list-transation">
+            <a routerLink="/blog" class="color-737373 text-decoration-none list-transation font-14"
+              ><i class="fa-solid fa-angle-left ms-2"></i> مناظر طبيعية</a
+            >
           </li>
-          <li class="color-737373 mb-3 cursor-pointer list-transation font-14">
-            <i class="fa-solid fa-angle-left ms-2"></i>تقنيات
+          <li class="mb-3 cursor-pointer list-transation">
+            <a routerLink="/blog" class="color-737373 text-decoration-none list-transation font-14"
+              ><i class="fa-solid fa-angle-left ms-2"></i> إضاءة</a
+            >
           </li>
         </ul>
       </div>
